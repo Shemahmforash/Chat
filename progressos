@@ -1,0 +1,50 @@
+!!!ter em conta problemas com acentos no ajax/ler do file -> parece q só dá problemas no chrome!!!
+!!!passar o nome do ficheiro para o setInterval!!!
+!!estou a ler todas as linhas do ficheiro e dpois a escolher só as ultimas, devia ler só as ultimas linhas, mas pra isso ser fácil, devia escrever o file ao contrário!!
+
+
+**********************0.4******************
+Faço com que a impressão de erros seja separada por novas linhas.
+
+Faço merge do código do Tiago, incluindo o registo.
+
+Fiz com que ao entrar directamente por url na página de chat não permita ver o chat e reencaminhe logo para a página de login.
+
+**********************0.3******************
+
+Faço logout no bufferunload.
+
+Meto os eventos de login e logout a serem escritos no ficheiro tb.
+
+Reestruturo o javascript e meto o tarefa periódica a ser iniciada no onload do body.
+
+CREATE DATABASE `MOSSchat` ;
+CREATE TABLE IF NOT EXISTS `users` (
+  `userID` int(5) NOT NULL AUTO_INCREMENT,
+  `UserName` varchar(50) NOT NULL DEFAULT '',
+  `Password` varchar(150) NOT NULL DEFAULT '',
+  `CreationDate` date DEFAULT NULL,
+  `Administrador` tinyint(1) NOT NULL COMMENT 'Administrador dá permissão para fazer quase tudo na plataforma',
+  `Activo` tinyint(1) NOT NULL DEFAULT '1',
+  `Comentários` text NOT NULL,
+  PRIMARY KEY (`userID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+
+Faço ligação à base de dados e sistema básico de autenticação.
+
+Importo class de base base de dados.
+
+**********************0.2******************
+Adiciono comments
+
+Faço com q mostre no ecrã apenas xx linhas do ficheiro.
+
+Meto a função de ler a ser periódica.
+
+Converto para o formato com funções.
+
+**********************0.1******************
+Meto a funcionar bem à minha maneira.
+
+
