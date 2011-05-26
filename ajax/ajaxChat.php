@@ -90,7 +90,12 @@ if($write == 1) {
         fclose($handle);
 
         //vou buscar apenas as ultimas entradas no ficheiro
-        $sliced = array_slice($contents, count($contents) - $MAXLINES, $MAXLINES);
+        if(count($contents) > $MAXLINES) {
+            $sliced = array_slice($contents, count($contents) - $MAXLINES, $MAXLINES);
+        }
+        else {
+            $sliced = $contents;
+        }
 
         //converte o array numa string, separando cada entrada do array por uma linha diferente
         $contentsStr = implode("<br/>", $sliced);

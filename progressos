@@ -1,7 +1,13 @@
 !!!ter em conta problemas com acentos no ajax/ler do file -> parece q só dá problemas no chrome!!!
 !!!passar o nome do ficheiro para o setInterval!!!
 !!estou a ler todas as linhas do ficheiro e dpois a escolher só as ultimas, devia ler só as ultimas linhas, mas pra isso ser fácil, devia escrever o file ao contrário!!
+!!!ESTAMOS COM PROBLEMAS, PQ QDO FECHO A PÁGINA NO CHROME, ELE NEM SEMPRE MOSTRA O TEXTO DE LOGOUT!!!
 
+
+
+Crio um ajax só para fazer logout. E uso-o para fazer logout sempre q se sai da página de chat (desde q o botão logout n tenha sido carregado).
+
+Crio uma página de reencaminhamento nas diversas pastas, mas n deixar o firefox mostrar o seu conteúdo.
 
 **********************0.4******************
 Faço com que a impressão de erros seja separada por novas linhas.

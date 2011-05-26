@@ -133,6 +133,14 @@ function startPeriodicCheck() {
     periodicCheck = setInterval("ajaxReadFromFile('../chat/chat.txt')", waitTime);
 }
 
+function ajaxLogout() {
+    //alert("Read From file");
+    ajaxReadRequest = criaObjXmlHttp();
+    ajaxReadRequest.open("GET", "./ajax/logout.php", true);
+    ajaxReadRequest.send(null);
+
+}
+
 
 
 
