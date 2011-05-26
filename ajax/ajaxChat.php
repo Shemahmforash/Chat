@@ -1,5 +1,7 @@
 <?php
 
+header("Content-Type: text/html; charset=iso-8859-1");//isto serve para n haver problemas com acentos.
+
 $message = $_REQUEST['message'];
 $message = htmlspecialchars(stripslashes($message));
 $nick = $_REQUEST['nick'];

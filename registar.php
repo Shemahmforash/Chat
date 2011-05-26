@@ -3,8 +3,8 @@ require_once './config/config.php';
 require_once './class/class.DBWrapper.php';
 
 
-ini_set("display_errors", 1);
-error_reporting(E_ALL & ~E_NOTICE);
+//ini_set("display_errors", 1);
+//error_reporting(E_ALL & ~E_NOTICE);
 $errors = array();
 
 if(!empty($_POST)) {

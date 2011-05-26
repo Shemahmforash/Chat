@@ -2,7 +2,12 @@
 !!!passar o nome do ficheiro para o setInterval!!!
 !!estou a ler todas as linhas do ficheiro e dpois a escolher só as ultimas, devia ler só as ultimas linhas, mas pra isso ser fácil, devia escrever o file ao contrário!!
 
+Acrescento:
+header("Content-Type: text/html; charset=iso-8859-1");//isto serve para n haver problemas com acentos.
 
+E parece q o problema dos acentos no chrome fica resolvido
+
+**********************0.5*******************
 Corrijo o problema de desaparecerem linhas no chat (estava a cortar o array mesmo qdo ele era menor q o tamanho limite).
 
 Crio um ajax só para fazer logout. E uso-o para fazer logout sempre q se sai da página de chat (desde q o botão logout n tenha sido carregado).
