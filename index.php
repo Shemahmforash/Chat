@@ -11,9 +11,9 @@ $errors = array();
 
 //var_dump($_POST);
 
-//se voltar a esta página dpois de estar autenticado, mudo de novo para a página do chat
+//se voltar a esta pÃ¡gina dpois de estar autenticado, mudo de novo para a pÃ¡gina do chat
 if(isset($_SESSION['autenticacao'])) {
-    //reencaminho para a página do chat
+    //reencaminho para a pÃ¡gina do chat
     Header( "HTTP/1.1 301 Moved Permanently" );
     Header( "Location: chat.php" );
 }
@@ -21,22 +21,23 @@ if(isset($_SESSION['autenticacao'])) {
 //Processment of the Login form
 if(!empty($_POST) and $_POST['submit'] == 'Login') {
     //it connects to the DB to check if the user and password correspond
+    //and if the user is not already authenticated
     $dbWrapper = new DBWrapper(dbHOST, dbUSER, dbPASSWORD, dbNAME);
     $isAuthenticaded = $dbWrapper->RetornaResultadoSelectTabela
             ("*", "users", "UserName = '".mysql_real_escape_string($_POST['user'])."'
-            AND Password = '".mysql_real_escape_string(sha1($_POST['password']))."'");
+            AND Password = '".mysql_real_escape_string(sha1($_POST['password']))."' AND logged = 0");
 
     //if they correspond, we set the session and move to the chat page
     if(count($isAuthenticaded) > 0) {
         $_SESSION['autenticacao'] = $_POST['user'];
 
-        //reencaminho para a página do chat
+        //reencaminho para a pï¿½gina do chat
         Header( "HTTP/1.1 301 Moved Permanently" );
         Header( "Location: chat.php" );
         //echo "OK";
     } else {
         unset($_SESSION['autenticacao']);
-        $errors[] = "O username e a password não batem certo.";
+        $errors[] = "O username e a password nï¿½o batem certo.";
         //echo "NOT OK";
     }
 }
@@ -53,7 +54,7 @@ if(!empty($_POST) and $_POST['submit'] == 'Registar') {
 
     //validacao do user, aceita unicamente strings
     if(!filter_input(INPUT_POST, 'user',FILTER_SANITIZE_STRING)) {
-        $errors[] = "Username não é válido";
+        $errors[] = "Username nÃ£o Ã© vÃ¡lido";
     }
     /*
     */
@@ -67,9 +68,9 @@ if(!empty($_POST) and $_POST['submit'] == 'Registar') {
                     ("*", "users", "UserName = '".$user."'");
 
 
-            //Verifica se o utilizador já existe se existir não insere e devolve mensagem de erro
+            //Verifica se o utilizador jï¿½ existe se existir nï¿½o insere e devolve mensagem de erro
             if($alreadyExistsCheck[0]['UserName'] !="") {
-                $errors[] = "Este Utilizador já existe, tente outro";
+                $errors[] = "Este Utilizador jÃ¡ existe, tente outro";
 
             }else {
 
@@ -77,12 +78,12 @@ if(!empty($_POST) and $_POST['submit'] == 'Registar') {
             }
 
             if($insert_user != false) {
-                $errors[] = "Utilizador inserido correctamente. Clique <a href=\"index.php\">aqui</a> para se autenticar";
+                $errors[] = "Utilizador inserido correctamente.";
             }
 
         }
     }else {
-        $errors[] = "Todos os campos são obrigatórios";
+        $errors[] = "Todos os campos sÃ£o obrigatÃ³rios";
     }
 }
 ?>

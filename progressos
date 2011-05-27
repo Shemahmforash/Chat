@@ -4,6 +4,15 @@
 
 
 
+Faço com q na função ajax de logout, ele actualize também na base de dados o estado logged out do user.
+
+Meto valor defeito no campo logged da tabela.
+ALTER TABLE `users` CHANGE `logged` `logged` BOOLEAN NOT NULL DEFAULT '0'
+
+Acrescento verificação ao fazer login de o user n poder estar já autenticado.
+
+Faço um merge do código do tiago (mostra div com users logados)
+
 Configuro o css do div de erros para aparecer em maiusculas e a vermelho.
 
 Incluo o código jquery do Rui e meto o processamento de registar e autenticar tudo no index.php
@@ -45,6 +54,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `Administrador` tinyint(1) NOT NULL COMMENT 'Administrador dá permissão para fazer quase tudo na plataforma',
   `Activo` tinyint(1) NOT NULL DEFAULT '1',
   `Comentários` text NOT NULL,
+  logged int(2) NOT NULL,
   PRIMARY KEY (`userID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 

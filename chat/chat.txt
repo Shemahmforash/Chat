@@ -1,8 +1,23 @@
-(2011-05-26 11:20:09)Boda has logged out.
-(2011-05-26 11:35:05)Boda has logged in.
-(2011-05-26 11:35:10)Boda: é à
-(2011-05-26 11:35:23)Shoda has logged in.
-(2011-05-26 11:45:42)Shoda has logged out.
-(2011-05-26 11:52:57)Shoda has logged in.
-(2011-05-26 11:53:01)Shoda has logged out.
-(2011-05-26 11:59:02)Shoda has logged in.
+(2011-05-27 22:18:20)Carlos has logged in.
+(2011-05-27 22:18:33)Boda has logged in.
+(2011-05-27 22:18:40)Boda: la la la
+(2011-05-27 22:18:47)Carlos: muuuuu
+(2011-05-27 22:19:01)Boda: asdlfkjasdlkfj
+(2011-05-27 22:19:04)Carlos: asdfaskdfsalkdjf
+(2011-05-27 22:19:37)Boda has logged out.
+(2011-05-27 22:21:09)Boda has logged in.
+(2011-05-27 22:21:16)Boda has logged out.
+(2011-05-27 22:26:06)Boda has logged in.
+(2011-05-27 22:26:17)Carlos has logged in.
+(2011-05-27 22:26:23)Boda has logged out.
+(2011-05-27 22:27:19)Boda has logged in.
+(2011-05-27 22:28:57)Boda has logged in.
+(2011-05-27 22:29:06)Boda has logged out.
+(2011-05-27 22:29:29)Boda has logged in.
+(2011-05-27 22:29:33)Carlos has logged out.
+(2011-05-27 22:30:15)Carlos has logged in.
+(2011-05-27 22:30:22)Carlos has logged in.
+(2011-05-27 22:30:30)Carlos has logged out.
+(2011-05-27 22:35:15)root has logged in.
+(2011-05-27 22:37:12)Boda has logged out.
+(2011-05-27 22:37:20)Carlos has logged in.

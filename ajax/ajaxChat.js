@@ -2,14 +2,18 @@
 //ajax variables
 var ajaxReadRequest = false;
 var ajaxWriteRequest = false;
+var ajaxGetRequest = false;
 
 //the time between each reading from the file
 var waitTime = 1000;
+
+//the time between each refresh of the logged users list
+var waitReadUsers = 1000;
 //var actual = setTimeout("ajaxLer('chat.txt')", waitTime);
 
 //from time to time it reads from the file
 var periodicCheck;// = setInterval("ajaxReadFromFile('../chat/chat.txt')", waitTime);
-
+var checkUser;
 /**
  * It writes the messagen when pressing the enter key
  */
@@ -46,7 +50,7 @@ function criaObjXmlHttp(){
     return ajaxRequest;
 }
 
-//dpois de ler actualizo o ecrã
+//dpois de ler actualizo o ecrï¿½
 /*function afterWriting() {
     if(ajaxWriteRequest.readyState == 4) {
         //var texto = ajaxWriteRequest.responseText;
@@ -67,6 +71,21 @@ function updateScreenFromFile() {
     }
 }
 
+/*
+*Refreshes the div with the users authenticated
+*/
+function updateUser()
+{ 
+	console.log(ajaxGetRequest.readyState);
+	 if(ajaxGetRequest.readyState == 4) {
+		 
+		
+	        var texto = ajaxGetRequest.responseText;
+	        //alert("texto = " + texto);
+	        document.getElementById("aa").innerHTML = texto;
+	    }
+}
+
 /**
  *By usig a ajax variable, it reads the contents from the file and puts them on the screen
  */
@@ -79,6 +98,22 @@ function ajaxReadFromFile(fileName) {
     ajaxReadRequest.open("GET", "./ajax/ajaxChat.php" + queryString, true);
 
     ajaxReadRequest.send(null);
+}
+
+/*
+* Runs periodically to check which users are authenticated
+*/
+function ajaxReadUsers(user, logged,read)
+{
+	console.log("entrou");
+	ajaxGetRequest = criaObjXmlHttp();
+	ajaxGetRequest.onreadystatechange = function() 
+	{
+		updateUser();
+	};
+    var queryString = "?user="+ user+ "&logged=" + logged + "&read="+ read;
+    ajaxGetRequest.open("GET", "./ajax/loadUser.php" + queryString, true);
+    ajaxGetRequest.send(null);
 }
 
 /**
@@ -131,12 +166,13 @@ function stopPeriodicCheck() {
  */
 function startPeriodicCheck() {
     periodicCheck = setInterval("ajaxReadFromFile('../chat/chat.txt')", waitTime);
+    checkUser = setInterval("ajaxReadUsers('', '','')", waitReadUsers);
 }
 
 function ajaxLogout() {
     //alert("Read From file");
     ajaxReadRequest = criaObjXmlHttp();
-    ajaxReadRequest.open("GET", "./ajax/logout.php", true);
+    ajaxReadRequest.open("GET", "./ajax/ajaxLogout.php", true);
     ajaxReadRequest.send(null);
 
 }
